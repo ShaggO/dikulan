@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from werkzeug import Local, LocalManager
 from werkzeug.routing import Map, Rule
 

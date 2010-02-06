@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from werkzeug import Request, Response, ClosingIterator
 from dikulan.utils import local
 class Application(object):
