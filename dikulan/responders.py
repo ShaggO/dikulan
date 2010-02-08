@@ -46,4 +46,10 @@ def contact(request):
 def news(request):
     return render_template("/pages/news.mako")
 
-
+@expose("/login")
+def login(request):
+    return render_template("/pages/loginprompt.mako")
+    
+@expose("/login/auth")
+def login_auth(request):
+    return Response("Auth!")
