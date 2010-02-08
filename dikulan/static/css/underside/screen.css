@@ -1,3 +1,16 @@
+@font-face {
+    font-family: "TextFont";
+    src: url("/static/text.ttf") format("truetype");
+}
+@font-face {
+    font-family: "MenuFont";
+    src: url("/static/heading.otf") format("opentype");
+}
+@font-face {
+    font-family: "HeadingFont";
+    src: url("/static/heading.otf") format("opentype");
+}
+
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
     margin:0;
     padding:0;
@@ -30,14 +43,12 @@ abbr,acronym {
     border:0;
 }
 
-
 html {
     overflow-y: scroll;
 }
 
 body {
     background: #D0D0D0;
-    font-size: 13pt;
 }
 
 #main {
@@ -74,8 +85,7 @@ body {
 
 #menu .menu-item {
     float:left;
-    font: 8pt "Tahoma", sans;
-    font-weight: bold;
+    font: 10pt/90% "MenuFont";
     width: 150px;
 }
 
@@ -95,26 +105,28 @@ body {
     float: left;
     width: 549px;
     padding: 0 20px 0 20px;
-    font-family: "Verdana";
-    font-size:9pt;
+    font-family: "TextFont";
+    font-size: 9pt;
 }
 
 
 #main-content h1, #main-content h2, #main-content h3 {
-    margin: 1em 0;
-    font-family: "Verdana", sans-serif;
+    font-family: "HeadingFont";
 }
 #main-content h1, #main-content h2, #main-content h3, #main-content h4, #main-content h5, #main-content h6, #main-content strong {
     font-weight: bold;
 }
 #main-content h1 {
-    font-size: 160%;
+    font-size: 23pt;
+    margin:10px 0 10px 0;
 }
 #main-content h2 {
-    font-size: 120%;
+    font-size: 19pt;
+    margin:10px 0 10px 0;
 }
 #main-content h3 {
-    font-size: 110%;
+    font-size: 16pt;
+    margin:10px 0 10px 0;
 }
 
 #main-content abbr, #main-content acronym {
@@ -141,7 +153,7 @@ body {
 }
 #main-content th, #main-content td {
     border:1px solid #000;
-    padding:.5em;
+    padding:4px;
 }
 #main-content th {
     font-weight:bold;
