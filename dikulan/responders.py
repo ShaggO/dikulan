@@ -8,27 +8,27 @@ log = logging.getLogger(__name__)
 @expose("/")
 @expose("/index")
 def frontpage(request):
-    return render_template('/pages/frontpage.mako')
+    return render_template("/pages/frontpage.mako")
 
 @expose("/information")
 def information(request):
-    return render_template('/pages/information.mako')
+    return render_template("/pages/information.mako")
 
 @expose("/madmuligheder")
 def foodoptions(request):
-    return render_template('/pages/food-options.mako')
+    return render_template("/pages/food-options.mako")
 
 @expose("/turneringer-events")
 def tournaments_events(request):
-    return render_template('/pages/tournaments-events.mako')
+    return render_template("/pages/tournaments-events.mako")
 
 @expose("/regler")
 def rules(request):
-    return render_template('/pages/rules.mako')
+    return render_template("/pages/rules.mako")
 
 @expose("/pladsbestilling")
 def seatbooking(request):
-    return render_template('/pages/seatbooking.mako')
+    return render_template("/pages/seatbooking.mako")
 
 @expose("/pladsbestilling/statusimage")
 def seatbooking_statusimage(request):
@@ -36,14 +36,14 @@ def seatbooking_statusimage(request):
 
 @expose("/galleri")
 def gallery(request):
-    return render_template('/pages/gallery.mako')
+    return render_template("/pages/gallery.mako")
 
 @expose("/kontakt")
 def contact(request):
-    return render_template('/pages/contact.mako')
+    return render_template("/pages/contact.mako")
 
 @expose("/nyheder")
 def news(request):
-    return render_template('/pages/news.mako')
+    return render_template("/pages/news.mako")
 
 
