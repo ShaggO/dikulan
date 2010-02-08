@@ -30,6 +30,10 @@ def rules(request):
 def seatbooking(request):
     return render_template('/pages/seatbooking.mako')
 
+@expose("/pladsbestilling/statusimage")
+def seatbooking_statusimage(request):
+    return Response("Not implemented")
+
 @expose("/galleri")
 def gallery(request):
     return render_template('/pages/gallery.mako')
