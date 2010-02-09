@@ -24,7 +24,7 @@ class Application(object):
             endpoint, params = url_adapter.match()
             response = getattr(responders,endpoint)(request,**params)
         except NotFound:
-            response = Response("Findes ikke!")
+            response = getattr(responders,"notfound")(request)
         return response(environ, start_response)
         
     def __call__(self, environ, start_response):

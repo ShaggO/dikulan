@@ -21,8 +21,8 @@
                     <li class="menu-item"><a href="${url_for("gallery")}">Galleri</a></li>
                     <li class="menu-item"><a href="${url_for("contact")}">Kontakt</a></li>
                     <li class="menu-item"><a href="${url_for("news")}">Nyheder</a></li>
-                    <li class="menu-item"><a href="${url_for("login")}">Login</a></li>
-                </ul>
+                    <li class="menu-item"><a href="${url_for("user_login")}">Login</a></li>
+</ul>
                 <div id="main-content">
                     ${next.body()}
                 </div>
