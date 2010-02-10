@@ -8,12 +8,12 @@
 <form>
 <table>
     <tr>
-        <th>Brugernavn:</th>
-        <td><input type="text" name="username"/></td>
+        <th><label class="login-form-label" for="login-username">Brugernavn:</label></th>
+        <td><input id="login-username" type="text" name="username"/></td>
     </tr>
     <tr>
-        <th>Password:</th>
-        <td><input type="password" name="password"/></td>
+        <th><label class="login-form-label" for="login-password">Password:</label></th>
+        <td><input id="login-password" type="password" name="password"/></td>
     </tr>
     <tr>
         <td colspan="2" id="login-submit"><input type="submit" value="Log ind"/></td>

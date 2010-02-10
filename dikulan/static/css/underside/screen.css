@@ -108,7 +108,10 @@ body {
     font-family: "TextFont";
     font-size: 9pt;
 }
-
+#main-content input {
+    border: 1px solid #CCC;
+    background-color: #FFF;
+}
 
 #main-content h1, #main-content h2, #main-content h3 {
     font-family: "HeadingFont";
@@ -165,7 +168,19 @@ body {
 }
 #main-content p, #main-content fieldset, #main-content table {
     margin-bottom:1em;
+    border:0;
+}
+#main-content td, #main-content th {
+    border:1px solid #AAA;
 }
 #main-content a {
     text-decoration: underline;
+}
+
+#main-content .login-form-label {
+    display: block;
+    text-align: right;
+}
+#login-submit {
+    text-align: right;
 }
