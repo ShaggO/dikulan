@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 from werkzeug import Response
-from dikulan.utils import expose, render_template
+from dikulan.utils import expose, render_template, pool
 
 log = logging.getLogger(__name__)
 

@@ -3,6 +3,9 @@ from werkzeug import Local, LocalManager, Response
 from werkzeug.routing import Map, Rule
 from os.path import dirname, join
 from mako.lookup import TemplateLookup
+from dikulan.config import config
+from dikulan.lib import pool
+import MySQLdb
 
 __all__ = [
     "root_path",
@@ -10,7 +13,9 @@ __all__ = [
     "application",
     "expose",
     "render_template",
-    "url_for"
+    "url_for",
+    "config",
+    "pool"
 ]
 
 root_path = dirname(__file__)
@@ -44,3 +49,13 @@ def render_template(templatename, **kwargs):
     kwargs["url_for"] = url_for
     response.data = template.render(**kwargs)
     return response
+
+pool = pool.Pool(
+    creator = lambda: MySQLdb.connect(
+        host=config["mysql_address"],
+        user=config["mysql_username"],
+        passwd=config["mysql_password"],
+        db=config["mysql_database"]
+    ),
+    maxsize=10
+)
