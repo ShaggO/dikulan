@@ -2,7 +2,6 @@
 import logging
 from werkzeug import Response
 from dikulan.utils import expose, render_template, pool
-
 log = logging.getLogger(__name__)
 
 @expose("/")
@@ -48,15 +47,16 @@ def news(request):
 
 @expose("/user/login")
 def user_login(request):
-    return render_template("/pages/loginprompt.mako")
-
-@expose("/user/login/auth")
-def user_login_auth(request):
-    return Response("Auth!")
-
+    if request.method == "POST":
+        return Response("Auth!")
+    else:
+        return render_template("/pages/loginform.mako")
 @expose("/user/register")
 def user_register(request):
-    return Response("Register!")
+    if request.method == "POST":
+        return Response("Register!")
+    else:
+        return render_template("/pages/registrationform.mako")
 
 def notfound(request):
     return render_template("/pages/errors/notfound.mako")

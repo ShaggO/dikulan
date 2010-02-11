@@ -5,7 +5,7 @@
     adgangskode. Hvis du ikke er registreret endnu
     <a href="${url_for("user_register")}">kan du gøre det her.</a>
 </p>
-<form>
+<form method="post" action="${url_for("user_login")}">
 <table>
     <tr>
         <th><label class="login-form-label" for="login-username">Brugernavn:</label></th>
