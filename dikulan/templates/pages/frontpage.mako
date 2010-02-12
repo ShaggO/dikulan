@@ -13,6 +13,6 @@
 </p>
 <h3>Næste LAN</h3>
 <table>
-    <tr><td>Starttidspunkt:</td><td>d. 23. april 2010 kl. 16.00</td></tr>
-    <tr><td>Sluttidspunkt: </td><td>d. 25. april 2010 kl. 16.00</td></tr>
+    <tr><td>Starttidspunkt:</td><td>d. 16. april 2010 kl. 16.00</td></tr>
+    <tr><td>Sluttidspunkt: </td><td>d. 18. april 2010 kl. 16.00</td></tr>
 </table>
