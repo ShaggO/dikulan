@@ -83,13 +83,13 @@ body {
     width: 150px;
 }
 
-#menu .menu-item {
+#menu li {
     float:left;
     font: 10pt/90% "MenuFont";
     width: 150px;
 }
 
-#menu .menu-item a {
+#menu > li > a {
     background: url('/static/images/menu-pil.png') 6px 7px no-repeat;
     float: left;
     padding: 4px 0 4px 21px;
@@ -97,7 +97,15 @@ body {
     width: 129px;
     text-decoration: none;
 }
-#menu .menu-item a:hover {
+#menu > li > ul > li > a {
+    background: url('/static/images/menu-pil.png') 10px 7px no-repeat;
+    float: left;
+    padding: 4px 0 4px 25px;
+    color: #000;
+    width: 125px;
+    text-decoration: none;
+}
+#menu > li a:hover {
     background-color: #E4E4E4;
 }
 
