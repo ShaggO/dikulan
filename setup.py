@@ -25,3 +25,19 @@ default charset=utf8
 collate=utf8_danish_ci
 pack_keys=1;
 """)
+c.execute("""
+create table if not exists `user` (
+  `id` int unsigned not null auto_increment,
+  `email` varchar(255) default null,
+  `password` varchar(255) not null,
+  `name` varchar(255) default null,
+  primary key (`id`),
+  unique `email` (`email`(10)),
+  index `auth` (`email`(10),`password`(10)),
+  index `name` (`name`(10))
+)
+engine=InnoDB
+default charset=utf8
+collate=utf8_danish_ci
+pack_keys=1;
+""")

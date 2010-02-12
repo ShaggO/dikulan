@@ -6,10 +6,13 @@
     <a href="${url_for("user_register")}">kan du gøre det her.</a>
 </p>
 <form method="post" action="${url_for("user_login")}">
+% if auth_failure:
+    <p class="error-message">Forkert email eller adgangskode</p>
+% endif
 <table>
     <tr>
-        <th><label class="login-form-label" for="login-username">Brugernavn:</label></th>
-        <td><input id="login-username" type="text" name="username"/></td>
+        <th><label class="login-form-label" for="login-email">E-mail:</label></th>
+        <td><input id="login-email" type="text" name="email"/></td>
     </tr>
     <tr>
         <th><label class="login-form-label" for="login-password">Password:</label></th>

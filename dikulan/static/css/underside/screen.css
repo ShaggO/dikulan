@@ -71,7 +71,7 @@ body {
 
 #middle {
     float: left;
-    padding: 0 9px 0 9px;
+    padding: 0 0 0 9px;
     width:100%;
     background: url('/static/images/page-middle.png') repeat-y;
 }
@@ -111,8 +111,8 @@ body {
 
 #main-content {
     float: left;
-    width: 549px;
-    padding: 0 20px 0 20px;
+    width: 570px;
+    padding: 0 0 0 20px;
     font-family: "TextFont";
     font-size: 9pt;
 }
@@ -124,7 +124,7 @@ body {
 #main-content h1, #main-content h2, #main-content h3 {
     font-family: "HeadingFont";
 }
-#main-content h1, #main-content h2, #main-content h3, #main-content h4, #main-content h5, #main-content h6, #main-content strong {
+#main-content strong {
     font-weight: bold;
 }
 #main-content h1 {
@@ -191,4 +191,37 @@ body {
 }
 #login-submit {
     text-align: right;
+}
+
+#main-content form table td{
+    border:0;
+    
+}
+#main-content form table th{
+    border:0;
+    vertical-align:top;
+}
+
+#main-content .error-message {
+    margin:0;
+    color:#F00;
+}
+
+#main-content form table {
+    width:400px;
+}
+#main-content form table input {
+    width:100%;
+}
+#main-content .hint {
+    margin:0;
+    color:#AAA;
+}
+#main-content #statusbar {
+    width:200px;
+    float:right;
+    padding: 10px;
+    margin: 0 0 7px 7px;
+    border-bottom: 1px dotted #EEE;
+    border-left: 1px dotted #EEE;
 }

@@ -5,6 +5,7 @@ from os.path import dirname, join
 from werkzeug.exceptions import NotFound
 import logging
 import dikulan.responders as responders
+from dikulan.lib.session import Session
 
 log = logging.getLogger(__name__)
 
@@ -19,12 +20,15 @@ class Application(object):
     def dispatch(self, environ, start_response):
         url_adapter = url_map.bind_to_environ(environ)
         local.url_adapter = url_adapter
-        request = Request(environ)
+        local.request = Request(environ)
+        local.session = Session()
         try:
             endpoint, params = url_adapter.match()
-            response = getattr(responders,endpoint)(request,**params)
+            response = getattr(responders,endpoint)(**params)
         except NotFound:
-            response = getattr(responders,"notfound")(request)
+            response = getattr(responders,"notfound")()
+        local.session.set_cookie(response)
+        local.session.save_session()
         return response(environ, start_response)
         
     def __call__(self, environ, start_response):

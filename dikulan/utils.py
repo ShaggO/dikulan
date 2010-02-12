@@ -42,20 +42,35 @@ template_lookup = TemplateLookup(
     output_encoding="utf-8"
 )
 
-def render_template(templatename, **kwargs):
+def render_template(templatename, response, **kwargs):
+    from xml.sax.saxutils import quoteattr, escape
+    from dikulan import widget
     template = template_lookup.get_template(templatename)
-    response = Response()
     kwargs["response"] = response
     kwargs["url_for"] = url_for
+    kwargs["esc_attr"] = quoteattr
+    kwargs["escape"] = escape
+    kwargs["widget"] = widget
     response.data = template.render(**kwargs)
-    return response
+
+def render_widget(widgetname, **kwargs):
+    from xml.sax.saxutils import quoteattr, escape
+    from dikulan import widget
+    template = template_lookup.get_template(widgetname)
+    kwargs["url_for"] = url_for
+    kwargs["esc_attr"] = quoteattr
+    kwargs["escape"] = escape
+    kwargs["widget"] = widget
+    return template.render(**kwargs)
 
 pool = pool.Pool(
     creator = lambda: MySQLdb.connect(
         host=config["mysql_address"],
         user=config["mysql_username"],
         passwd=config["mysql_password"],
-        db=config["mysql_database"]
+        db=config["mysql_database"],
+        charset="utf8",
+        use_unicode=True
     ),
     maxsize=10
 )

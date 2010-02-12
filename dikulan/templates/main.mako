@@ -12,24 +12,16 @@
         <div id="middle">
             <div id="middle-content">                    
                 <ul id="menu">
-                    <li class="menu-item"><a href="${url_for("frontpage")}">Forside</a></li>
-                    <li class="menu-item"><a href="${url_for("information")}">Information</a></li>
-                    <li class="menu-item"><a href="${url_for("foodoptions")}">Madmuligheder</a></li>
-                    <li class="menu-item"><a href="${url_for("tournaments_events")}">Turneringer/events</a></li>
-                    <li class="menu-item"><a href="${url_for("rules")}">Regler</a></li>
-                    <li class="menu-item"><a href="${url_for("seatbooking")}">Pladsreservation</a></li>
-                    <li class="menu-item"><a href="${url_for("gallery")}">Galleri</a></li>
-                    <li class="menu-item"><a href="${url_for("contact")}">Kontakt</a></li>
-                    <li class="menu-item"><a href="${url_for("news")}">Nyheder</a></li>
-                    <li class="menu-item"><a href="${url_for("user_login")}">Login</a></li>
-</ul>
+                    ${widget.sidemenu()}
+                </ul>
                 <div id="main-content">
+                    ${widget.statusbar()}
                     ${next.body()}
                 </div>
             </div>
         </div>
         <div id="bottom">
-            <img id="top" alt="" src="/static/images/page-bottom.png"/>
+            <img alt="" src="/static/images/page-bottom.png"/>
         </div>
     </div>
 </body>
