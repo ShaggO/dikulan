@@ -90,7 +90,6 @@ def user_login():
     )
     return response
 
-@expose("/user/register")
 def user_register():
     from dikulan.model.user import add_user, EmailExists, InvalidEmail
     response = Response()
@@ -128,7 +127,6 @@ def user_register():
     )
     return response
 
-@expose("/user/profile")
 def user_profile():
     response = Response()
     email = local.session.get("user_id", "[Ukendt Bruger]")
