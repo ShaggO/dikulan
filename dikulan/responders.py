@@ -90,7 +90,9 @@ def user_login():
     )
     return response
 
+@expose("/user/register")
 def user_register():
+    return notfound()
     from dikulan.model.user import add_user, EmailExists, InvalidEmail
     response = Response()
     error_email_taken = False
@@ -127,7 +129,9 @@ def user_register():
     )
     return response
 
+@expose("/user/profile")
 def user_profile():
+    return notfound()
     response = Response()
     email = local.session.get("user_id", "[Ukendt Bruger]")
     render_template("/pages/userprofile.mako", response,
