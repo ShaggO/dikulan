@@ -3,7 +3,9 @@
 from cherrypy import wsgiserver
 from dikulan.application import Application
 
-server = wsgiserver.CherryPyWSGIServer(("0.0.0.0", 5000), Application())
+app = Application(debug=False)
+
+server = wsgiserver.CherryPyWSGIServer(("0.0.0.0", 5000), app)
 try:
     server.start()
 except KeyboardInterrupt:

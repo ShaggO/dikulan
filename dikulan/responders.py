@@ -147,3 +147,7 @@ def notfound():
     render_template("/pages/errors/notfound.mako", response)
     return response
 
+def error():
+	response = Response()
+	render_template("/pages/errors/error.mako", response)
+	return response

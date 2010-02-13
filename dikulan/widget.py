@@ -3,7 +3,6 @@ from dikulan.utils import render_widget, pool, url_for, local
 
 def sidemenu():
     is_logged_in = local.session.get("user_id") != None
-        
     return render_widget("widgets/sidemenu.mako",
         is_logged_in = is_logged_in
     )

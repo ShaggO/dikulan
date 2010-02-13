@@ -3,6 +3,9 @@
 from werkzeug import run_simple
 from dikulan.application import Application
 
+app = Application(debug=True)
+bind_address = "127.0.0.1"
+port = 5000
 run_simple(
-    "127.0.0.1", 5000, Application(), use_debugger=True, use_reloader=True
+    bind_address, port, app, use_debugger=True, use_reloader=True
 )
