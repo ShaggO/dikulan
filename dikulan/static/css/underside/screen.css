@@ -111,8 +111,8 @@ body {
 
 #main-content {
     float: left;
-    width: 570px;
-    padding: 0 0 0 20px;
+    width: 590px;
+    padding: 0 0 0 0;
     font-family: "TextFont";
     font-size: 9pt;
 }
@@ -177,6 +177,15 @@ body {
 #main-content p, #main-content fieldset, #main-content table {
     margin-bottom:1em;
     border:0;
+}
+#main-content > p, #main-content > h1, #main-content > h2, #main-content > h3,
+#main-content > h4, #main-content > h5, #main-content > h6, #main-content > table {
+    margin-right:20px;
+    margin-left: 20px;
+}
+#main-content > ul {
+    margin-left:40px;
+    margin-right:20px;
 }
 #main-content td, #main-content th {
     border:1px solid #AAA;
