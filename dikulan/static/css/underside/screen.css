@@ -12,35 +12,35 @@
 }
 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 table {
-    border-collapse:collapse;
-    border-spacing:0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 fieldset,img {
-    border:0;
+    border: 0;
 }
 address,caption,cite,code,dfn,em,strong,th,var {
-    font-style:normal;
-    font-weight:normal;
+    font-style: normal;
+    font-weight: normal;
 }
 ol,ul {
-    list-style:none;
+    list-style: none;
 }
 caption,th {
-    text-align:left;
+    text-align: left;
 }
 h1,h2,h3,h4,h5,h6 {
-    font-size:100%;
-    font-weight:normal;
+    font-size: 100%;
+    font-weight: normal;
 }
-q:before,q:after {
-    content:'';
+q: before,q: after {
+    content: '';
 }
 abbr,acronym {
-    border:0;
+    border: 0;
 }
 
 html {
@@ -57,7 +57,7 @@ body {
     /* Making a float centered */
     position: relative;
     float: left;
-    top:10px;
+    top: 10px;
     left: 50%;
     margin-left: -384px;
 }
@@ -66,13 +66,13 @@ body {
     float: left;
 }
 #top img {
-    float:left;
+    float: left;
 }
 
 #middle {
     float: left;
     padding: 0 0 0 9px;
-    width:100%;
+    width: 100%;
     background: url('/static/images/page-middle.png') repeat-y;
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 #menu li {
-    float:left;
+    float: left;
     font: 10pt/90% "MenuFont";
     width: 150px;
 }
@@ -105,20 +105,19 @@ body {
     width: 125px;
     text-decoration: none;
 }
-#menu > li a:hover {
+#menu > li a: hover {
     background-color: #E4E4E4;
 }
 
 #main-content {
     float: left;
     width: 590px;
-    padding: 0 0 0 0;
-    font-family: "TextFont";
-    font-size: 9pt;
+    font: 9pt "TextFont";
 }
 #main-content input {
     border: 1px solid #CCC;
     background-color: #FFF;
+    width: 300px;
 }
 
 #main-content h1, #main-content h2, #main-content h3 {
@@ -129,15 +128,15 @@ body {
 }
 #main-content h1 {
     font-size: 23pt;
-    margin:10px 0 10px 0;
+    margin: 10px 0 10px 0;
 }
 #main-content h2 {
     font-size: 19pt;
-    margin:10px 0 10px 0;
+    margin: 10px 0 10px 0;
 }
 #main-content h3 {
     font-size: 16pt;
-    margin:10px 0 10px 0;
+    margin: 10px 0 10px 0;
 }
 
 #main-content abbr, #main-content acronym {
@@ -151,7 +150,7 @@ body {
     margin: 1em;
 }
 #main-content ol, #main-content ul, #main-content dl {
-    margin-left:2em;
+    margin-left: 2em;
 }
 #main-content ol li {
     list-style: decimal outside;
@@ -160,35 +159,36 @@ body {
     list-style: disc outside;
 }
 #main-content dl dd {
-    margin-left:1em;
+    margin-left: 1em;
 }
 #main-content th, #main-content td {
-    border:1px solid #000;
-    padding:4px;
+    border: 1px solid #000;
+    padding: 4px;
 }
 #main-content th {
-    font-weight:bold;
-    text-align:center;
+    font-weight: bold;
+    text-align: center;
 }
 #main-content caption {
-    margin-bottom:.5em;
-    text-align:center;
+    margin-bottom: .5em;
+    text-align: center;
 }
 #main-content p, #main-content fieldset, #main-content table {
-    margin-bottom:1em;
-    border:0;
+    margin-bottom: 1em;
+    border: 0;
 }
 #main-content > p, #main-content > h1, #main-content > h2, #main-content > h3,
-#main-content > h4, #main-content > h5, #main-content > h6, #main-content > table {
-    margin-right:20px;
+#main-content > h4, #main-content > h5, #main-content > h6, #main-content > table,
+#main-content > form {
+    margin-right: 20px;
     margin-left: 20px;
 }
 #main-content > ul {
-    margin-left:40px;
-    margin-right:20px;
+    margin-left: 40px;
+    margin-right: 20px;
 }
 #main-content td, #main-content th {
-    border:1px solid #AAA;
+    border: 1px solid #AAA;
 }
 #main-content a {
     text-decoration: underline;
@@ -198,37 +198,25 @@ body {
     display: block;
     text-align: right;
 }
-#login-submit {
-    text-align: right;
-}
-
 #main-content form table td{
-    border:0;
-    
+    border: 0;
 }
 #main-content form table th{
-    border:0;
-    vertical-align:top;
+    border: 0;
+    vertical-align: top;
 }
-
-#main-content .error-message {
-    margin:0;
-    color:#F00;
-}
-
-#main-content form table {
-    width:400px;
-}
-#main-content form table input {
-    width:100%;
+#main-content form .error-message {
+    margin: 0;
+    color: #F00;
 }
 #main-content .hint {
-    margin:0;
-    color:#AAA;
+    margin: 0;
+    color: #AAA;
+    width: 300px;
 }
 #main-content #statusbar {
-    width:200px;
-    float:right;
+    width: 200px;
+    float: right;
     padding: 10px;
     margin: 0 0 7px 7px;
     border-bottom: 1px dotted #EEE;

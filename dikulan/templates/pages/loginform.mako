@@ -19,7 +19,8 @@
         <td><input id="login-password" type="password" name="password"/></td>
     </tr>
     <tr>
-        <td colspan="2" id="login-submit"><input type="submit" value="Log ind"/></td>
+        <th>&nbsp;</th>
+        <td><input type="submit" value="Log ind"/></td>
     </tr>
 </table>
 </form>

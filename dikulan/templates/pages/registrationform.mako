@@ -33,7 +33,8 @@
         </td>
     </tr>
     <tr>
-        <td colspan="2" id="register-submit"><input type="submit" value="Opret"/></td>
+        <th>&nbsp;</th>
+        <td><input type="submit" value="Opret"/></td>
     </tr>
 </table>
 </form>
