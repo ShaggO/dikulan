@@ -151,3 +151,10 @@ def error():
 	response = Response()
 	render_template("/pages/errors/error.mako", response)
 	return response
+
+@expose("/captcha")
+def captcha():
+    from dikulan.lib.captcha import render_captcha 
+    response = Response()
+    render_captcha(response)
+    return response
