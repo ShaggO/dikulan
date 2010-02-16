@@ -62,13 +62,7 @@ def contact():
     render_template("/pages/contact.mako", response)
     return response
 
-@expose("/nyheder")
-def news():
-    response = Response()
-    render_template("/pages/news.mako", response)
-    return response
-
-@expose("/user/login")
+@expose("/bruger/login")
 def user_login():
     from dikulan.model.user import user_id_by_auth, AuthFailureException
     auth_failure = False
@@ -138,7 +132,7 @@ def user_register():
     )
     return response
 
-@expose("/user/profile")
+@expose("/bruger/profil")
 def user_profile():
     response = Response()
     email = local.session.get("user_id", "[Ukendt Bruger]")
@@ -147,7 +141,7 @@ def user_profile():
     )
     return response
 
-@expose("/user/logout")
+@expose("/bruger/logud")
 def user_logout():
     local.session["user_id"] = None
     return redirect(url_for("frontpage"))

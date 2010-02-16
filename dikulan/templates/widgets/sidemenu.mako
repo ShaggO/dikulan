@@ -9,4 +9,3 @@
 <li><a href="${url_for("seatbooking")}">Pladsreservation</a></li>
 <li><a href="${url_for("gallery")}">Galleri</a></li>
 <li><a href="${url_for("contact")}">Kontakt</a></li>
-<li><a href="${url_for("news")}">Nyheder</a></li>

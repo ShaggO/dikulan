@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import random
 import Image, ImageFont, ImageDraw
 from os.path import join
