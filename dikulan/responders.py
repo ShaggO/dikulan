@@ -90,7 +90,7 @@ def user_login():
     )
     return response
 
-@expose("/user/register")
+@expose("/bruger/tilmelding")
 def user_register():
     from dikulan.model.user import add_user, EmailExists, InvalidEmail
     response = Response()
@@ -102,7 +102,7 @@ def user_register():
 
     email = ""
     if (local.request.method == "POST"):
-        email = local.request.form.get("email", "")
+        email = local.request.form.get("email", email)
         password = local.request.form.get("password", "")
         if email == "":
             error_no_email = True

@@ -3,9 +3,19 @@ from dikulan.utils import pool
 from dikulan.lib.string import validEmail
 from MySQLdb import IntegrityError
 
+__all__ = [
+    "EmailExists",
+    "InvalidEmail",
+    "add_user",
+    "get_email",
+    "user_id_by_auth"
+]
+
 class EmailExists(Exception):
     pass
 class InvalidEmail(Exception):
+    pass
+class AuthFailureException(Exception):
     pass
 
 def add_user(email, password):
@@ -24,9 +34,7 @@ def add_user(email, password):
         cursor.close()
         conn.commit()
         pool.give(conn)
-        
-class AuthFailureException(Exception):
-    pass
+
 
 def user_id_by_auth(email, password):
     conn = pool.take()

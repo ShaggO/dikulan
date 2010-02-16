@@ -13,9 +13,8 @@ def _generate_challenge():
     return challenge
 
 def _get_png(buf):
-    color_text = 0, 0, 0
-    color_background = 255, 255, 255
-    color_text,color_background = color_background,color_text
+    color_text = 255, 255, 255
+    color_background = 0, 0, 0
     fontpath = join(root_path, "resources","verdana.ttf")
     image = Image.new("RGB",(220,70),color_background)
     draw = ImageDraw.Draw(image)

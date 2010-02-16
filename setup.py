@@ -27,7 +27,7 @@ pack_keys=1;
 c.execute("""
 create table if not exists `user` (
   `id` int unsigned not null auto_increment,
-  `email` varchar(255) default null,
+  `email` varchar(255) not null,
   `password` varchar(255) not null,
   `name` varchar(255) default null,
   primary key (`id`),

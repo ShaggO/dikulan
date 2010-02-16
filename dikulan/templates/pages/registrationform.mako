@@ -1,5 +1,5 @@
 <%inherit file="/main.mako"/>
-<h1>Registrer</h1>
+<h1>Tilmelding</h1>
 <form method="post" action="${url_for("user_register")}">
 <table>
     <tr>
