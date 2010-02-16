@@ -2,6 +2,7 @@
 from dikulan.utils import pool
 from dikulan.lib.string import validEmail
 from MySQLdb import IntegrityError
+import random
 
 __all__ = [
     "EmailExists",
@@ -18,15 +19,22 @@ class InvalidEmail(Exception):
 class AuthFailureException(Exception):
     pass
 
-def add_user(email, password):
+characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+def _generate_password():
+    password = "".join(random.sample(characters,10))
+    return password
+
+def add_user(name, email):
     if not validEmail(email):
         raise InvalidEmail()
+    
+    password = _generate_password()
     
     conn = pool.take()
     cursor = conn.cursor()
     try:
-        cursor.execute(u"insert into user (email, password) values(%s,%s)",
-            (email,password)
+        cursor.execute(u"insert into user (name, email, password) values(%s,%s,%s)",
+            (name, email,password)
         )
     except IntegrityError:
         raise EmailExists()

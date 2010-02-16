@@ -117,7 +117,7 @@ body {
 #main-content input {
     border: 1px solid #CCC;
     background-color: #FFF;
-    width: 300px;
+    width: 200px;
 }
 
 #main-content h1, #main-content h2, #main-content h3 {
@@ -212,7 +212,7 @@ body {
 #main-content .hint {
     margin: 0;
     color: #AAA;
-    width: 300px;
+    width: 250px;
 }
 #main-content #statusbar {
     width: 200px;

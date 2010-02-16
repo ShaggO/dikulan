@@ -96,21 +96,30 @@ def user_register():
     response = Response()
     error_email_taken = False
     error_invalid_email = False
-    error_invalid_password = False
+    error_captcha = False
     error_no_email = False
-    error_no_password = False
+    error_no_name = False
 
     email = ""
+    name = ""
     if (local.request.method == "POST"):
+        name = local.request.form.get("name", name)
         email = local.request.form.get("email", email)
-        password = local.request.form.get("password", "")
+        captcha = local.request.form.get("captcha", "")
+        captcha_challenge = local.session.get("captcha_challenge",None)
+        
+        if captcha_challenge == None:
+            return redirect("frontpage")
+        
         if email == "":
             error_no_email = True
-        if password == "":
-            error_no_password = True
-        if not error_no_email and not error_no_password:
+        if name == "":
+            error_no_name = True
+        if captcha != captcha_challenge:
+            error_captcha = True
+        if not (error_no_email or error_captcha):
             try:
-                add_user(email, password)
+                add_user(name, email)
                 return redirect(url_for("user_login"))
             except EmailExists:
                 error_email_taken = True
@@ -120,11 +129,12 @@ def user_register():
     render_template(
         "/pages/registrationform.mako", response,
         email=email,
+        name=name,
+        error_captcha=error_captcha,
         error_email_taken=error_email_taken,
         error_invalid_email=error_invalid_email,
-        error_invalid_password=error_invalid_password,
         error_no_email=error_no_email,
-        error_no_password=error_no_password,
+        error_no_name=error_no_name
     )
     return response
 
