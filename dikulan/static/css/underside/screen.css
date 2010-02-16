@@ -105,7 +105,7 @@ body {
     width: 125px;
     text-decoration: none;
 }
-#menu > li a: hover {
+#menu > li a:hover {
     background-color: #E4E4E4;
 }
 
