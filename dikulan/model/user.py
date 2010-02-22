@@ -3,12 +3,13 @@ from dikulan.utils import pool
 from dikulan.lib.string import validEmail
 from MySQLdb import IntegrityError
 import random
+from dikulan.model.mail import send_email
 
 __all__ = [
     "EmailExists",
     "InvalidEmail",
     "add_user",
-    "get_email",
+    "get_name",
     "user_id_by_auth"
 ]
 
@@ -42,6 +43,11 @@ def add_user(name, email):
         cursor.close()
         conn.commit()
         pool.give(conn)
+    sendmail(
+        u"Challenge info", u"challengeinfo@dikulan.dk",
+        name, email,
+        "Velkommen","Test"
+    )
 
 
 def user_id_by_auth(email, password):
@@ -60,12 +66,12 @@ def user_id_by_auth(email, password):
         pool.give(conn)
     return id
 
-def get_email(id):
+def get_name(id):
     conn = pool.take()
     cursor = conn.cursor()
-    cursor.execute(u"select email from user where id=%s",(id,))
-    email, = cursor.fetchone()
+    cursor.execute(u"select name from user where id=%s",(id,))
+    name, = cursor.fetchone()
     conn.commit()
     cursor.close()
     pool.give(conn)
-    return email
+    return name

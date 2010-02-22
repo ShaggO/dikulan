@@ -61,7 +61,7 @@ def render_widget(widgetname, **kwargs):
     kwargs["esc_attr"] = quoteattr
     kwargs["escape"] = escape
     kwargs["widget"] = widget
-    return template.render(**kwargs)
+    return template.render(**kwargs).decode("utf-8")
 
 pool = pool.Pool(
     creator = lambda: MySQLdb.connect(

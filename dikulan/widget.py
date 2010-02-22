@@ -8,13 +8,13 @@ def sidemenu():
     )
     
 def statusbar():
-    from dikulan.model.user import get_email
+    from dikulan.model.user import get_name
     is_logged_in = local.session.get("user_id") != None
-    email = ""
+    name = ""
     if is_logged_in:
-        email = get_email(local.session.get("user_id"))
+        name = get_name(local.session.get("user_id"))
     
     return render_widget("widgets/statusbar.mako",
         is_logged_in = is_logged_in,
-        email = email
+        name = name
     )

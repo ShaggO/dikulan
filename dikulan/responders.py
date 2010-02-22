@@ -114,7 +114,10 @@ def user_register():
         if not (error_no_email or error_captcha):
             try:
                 add_user(name, email)
-                return redirect(url_for("user_login"))
+                render_template("/pages/registrationdone.mako", response,
+                    email=email
+                )
+                return response
             except EmailExists:
                 error_email_taken = True
             except InvalidEmail:

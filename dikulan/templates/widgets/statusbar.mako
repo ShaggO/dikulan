@@ -1,7 +1,8 @@
+## -*- coding: utf-8 -*-
 <div id="statusbar">
 % if is_logged_in:
     <p>
-        Du er logget ind som <a href="${url_for("user_profile")}">${email}</a>
+        Du er logget ind som <a href="${url_for("user_profile")}">${name}</a>
     </p>
     <ul>
         <li><a href="${url_for("user_profile")}">Profil side</a>.</li>
